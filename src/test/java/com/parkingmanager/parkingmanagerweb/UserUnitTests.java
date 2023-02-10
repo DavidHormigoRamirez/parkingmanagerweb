@@ -5,7 +5,7 @@ import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 
-import com.parkingmanager.parkingmanagerweb.user.User;
+import com.parkingmanager.parkingmanagerweb.user.domain.User;
 
 import static org.junit.jupiter.api.Assertions.*;
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
@@ -14,7 +14,7 @@ public class UserUnitTests {
     private User user;
     @BeforeEach
     void init() {
-        user = new User("David", "Hormigo", "Ramírez", 'P');
+        user = new User("david@cpifp.malaga.tech","David", "Hormigo", "Ramírez", 'P');
     }
     @Test
     void check_get_first_name() {

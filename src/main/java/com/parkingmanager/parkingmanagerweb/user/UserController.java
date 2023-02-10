@@ -1,23 +1,25 @@
 package com.parkingmanager.parkingmanagerweb.user;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import com.parkingmanager.parkingmanagerweb.user.domain.User;
+import com.parkingmanager.parkingmanagerweb.user.service.*;;
 @Controller
 public class UserController {
 
-    @Autowired
-    private UserRepository repository;
+    private UserService userService;
+    public UserController(@Autowired UserService userService) {
+        this.userService = userService;
+    }
 
 
     @GetMapping("/users")
     public String showAllUsers(Model model){
 
-        List<User> allUsers = repository.getAll();
+        Iterable<User> allUsers = userService.getAll();
 
         model.addAttribute("users",allUsers);
         return "userlist";
