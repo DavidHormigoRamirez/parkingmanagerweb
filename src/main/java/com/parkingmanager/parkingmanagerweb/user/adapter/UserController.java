@@ -1,4 +1,4 @@
-package com.parkingmanager.parkingmanagerweb.user;
+package com.parkingmanager.parkingmanagerweb.user.adapter;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +19,7 @@ public class UserController {
     @GetMapping("/users")
     public String showAllUsers(Model model){
 
-        Iterable<User> allUsers = userService.getAll();
+        Iterable<User> allUsers = userService.readAll();
 
         model.addAttribute("users",allUsers);
         return "userlist";

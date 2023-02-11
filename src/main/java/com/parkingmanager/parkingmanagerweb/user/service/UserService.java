@@ -1,6 +1,8 @@
 package com.parkingmanager.parkingmanagerweb.user.service;
 
 import com.parkingmanager.parkingmanagerweb.user.domain.User;
-public interface UserService {
-    public Iterable<User> getAll();
+import com.parkingmanager.parkingmanagerweb.core.CrudService;
+
+public interface UserService extends CrudService<User,Long> {
+
 }

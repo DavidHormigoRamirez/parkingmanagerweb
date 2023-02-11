@@ -15,15 +15,13 @@ public class User {
     private long id;
     @Nonnull
     private String email;
-    private String firstName;
 
+    private String firstName;
     private String lastName1;
 
     private String lastName2;
+
     private char role;
-    protected User() {
-        
-    }
     // Constructores
     public User(String email,String firstName, String lastName1, String lastName2, char role) {
         this.email = email;
@@ -31,6 +29,12 @@ public class User {
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
         this.role = role;
+    }
+    protected User() {
+        
+    }
+    public long getId() {
+        return id;
     }
     public String getEmail() {
         return email;
