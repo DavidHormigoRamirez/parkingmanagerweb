@@ -25,5 +25,9 @@ public class UserController {
         return "userlist";
 
     }
+    @GetMapping("/petazo")
+    public String showPetazo() {
+        return "petazo";
+    }
     
 }
