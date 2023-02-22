@@ -1,4 +1,4 @@
-package com.parkingmanager.parkingmanagerweb;
+package com.parkingmanager.parkingmanagerweb.user;
 import org.junit.jupiter.api.BeforeEach;
 
 import org.junit.jupiter.api.DisplayNameGeneration;
