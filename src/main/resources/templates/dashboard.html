@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" data-theme="dark">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -13,64 +13,41 @@
     <title>CPIFP Malaga TechPark</title>
   </head>
   <body>
-    <header>
-      <div class="navbar bg-base-100">
+    <header >
+      <div class="navbar">
         <div class="flex-1">
-          <a href="/dashboard" class="btn btn-ghost normal-case text-xl">CPIFP Malaga TechPark</a>
+          <a class="btn btn-ghost normal-case text-xl">CPIFP Malaga TechPark</a>
         </div>
         <div class="flex-none">
           <ul class="menu menu-horizontal px-1">
-            <li><a href="/users">Gestión de usuarios</a></li>
             <li tabindex="0">
               <a>
-                Parent
-                <svg
-                  class="fill-current"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"
-                  />
-                </svg>
+                Usuarios
+              <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+            
+            </a>
+            <ul class="p-2 bg-base-100">
+              <li><a href="/users">Lista de usuarios</a></li>
+              <li><a>Crear nuevo usuario</a></li>
+            </ul>
+            </li>
+            <li tabindex="0">
+              <a>
+                Sorteos
+                <svg class="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
               </a>
               <ul class="p-2 bg-base-100">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
+                <li><a>Sorteos realizads</a></li>
+                <li><a>Crear nuevo sorteo</a></li>
               </ul>
             </li>
-            <li><a>Item 3</a></li>
+            <li><a>Configuración</a></li>
           </ul>
         </div>
       </div>
     </header>
-    <main class="w-screen min-h-screen bg-base-200">
-      
-      <div class="overflow-x-auto container mx-auto">
-        <h1 class="font-sans text-2xl text-primary mx-auto py-6">Todos los usuarios</h1>
-        <table class="table w-full">
-            <thead class="text-secondary">
-                <tr>
-                    
-                    <th>Nombre</th>
-                    <th>Apellido 1</th>
-                    <th>Apellido 2</th>
-                    <th>Email</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr th:each="user : ${users}">
-                    
-                    <td th:text="${user.firstName}"/>
-                    <td th:text="${user.lastName1}"/>
-                    <td th:text="${user.lastName2}"/>
-                    <td th:text="${user.email}"/>
-                </tr>
-            </tbody>
-        </table>
-      </div>
+    <main class="px-10 w-screen min-h-screen bg-base-200">
+
     </main>
     <footer class="footer p-10 bg-neutral text-neutral-content">
       <div>
