@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public void update(User entity) {
-        User user = this.userRepository.findById(entity.getId()).orElseThrow();
+        //User user = this.userRepository.findById(entity.getId()).orElseThrow();
         userRepository.save(entity);
         
     }
