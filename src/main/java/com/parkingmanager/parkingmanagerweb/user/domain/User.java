@@ -22,13 +22,17 @@ public class User {
     private String lastName2;
 
     private char role;
+
+    private char gender;
+ 
     // Constructores
-    public User(String email,String firstName, String lastName1, String lastName2, char role) {
+    public User(String email,String firstName, String lastName1, String lastName2, char role, char gender) {
         this.email = email;
         this.firstName = firstName;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
         this.role = role;
+        this.gender = gender;
     }
     protected User() {
         
@@ -76,7 +80,12 @@ public class User {
     public void setRole(char role) {
         this.role = role;
     }
-
+    public char getGender() {
+        return gender;
+    }
+    public void setGender(char gender) {
+        this.gender = gender;
+    }
 
     
 }
