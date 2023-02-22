@@ -3,13 +3,18 @@ package com.parkingmanager.parkingmanagerweb.user;
 public class User {
 
     // Propiedades
+    private String email;
+
+
     private String firstName;
     private String lastName1;
     private String lastName2;
     private char role;
     
+    
     // Constructores
-    public User(String firstName, String lastName1, String lastName2, char role) {
+    public User(String email, String firstName, String lastName1, String lastName2, char role) {
+        this.email = email;
         this.firstName = firstName;
         this.lastName1 = lastName1;
         this.lastName2 = lastName2;
@@ -48,7 +53,13 @@ public class User {
     public void setRole(char role) {
         this.role = role;
     }
+    public String getEmail() {
+        return email;
+    }
 
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     
 }
