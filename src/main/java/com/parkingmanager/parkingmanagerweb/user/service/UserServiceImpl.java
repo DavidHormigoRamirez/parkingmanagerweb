@@ -22,20 +22,4 @@ public class UserServiceImpl implements UserService {
     public List<User> readAll() {
         return (List<User>) userRepository.findAll();
     }
-    @Override
-    public void create(User entity) {
-        this.userRepository.save(entity);
-        
-    }
-    @Override
-    public void update(User entity) {
-        //User user = this.userRepository.findById(entity.getId()).orElseThrow();
-        userRepository.save(entity);
-        
-    }
-    @Override
-    public void delete(Long id) {
-        userRepository.deleteById(id);
-        
-    }
 }
