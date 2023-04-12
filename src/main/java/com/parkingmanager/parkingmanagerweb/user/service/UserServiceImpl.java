@@ -14,10 +14,19 @@ public class UserServiceImpl implements UserService {
     public UserServiceImpl(@Autowired UserRepository userRepository) {
         this.userRepository = userRepository;
     }
+    
+    /** 
+     * @param id
+     * @return User
+     */
     @Override
     public User getById(Long id) {
         return this.userRepository.findById(id).orElseThrow();
     }
+    
+    /** 
+     * @return List<User>
+     */
     @Override
     public List<User> readAll() {
         return (List<User>) userRepository.findAll();

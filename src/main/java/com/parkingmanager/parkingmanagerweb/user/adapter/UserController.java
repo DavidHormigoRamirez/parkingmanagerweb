@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.parkingmanager.parkingmanagerweb.user.domain.User;
+import com.parkingmanager.parkingmanagerweb.user.domain.UserDao;
 import com.parkingmanager.parkingmanagerweb.user.service.*;;
 @Controller
 public class UserController {
@@ -18,14 +19,31 @@ public class UserController {
     }
 
 
+    
+    /** 
+     * @param model
+     * @return String
+     */
     @GetMapping("/users")
     public String showAllUsers(Model model){
         log.info("Devolviendo usuarios");
         Iterable<User> allUsers = userService.readAll();
 
         model.addAttribute("users",allUsers);
-        return "userlist";
+        return "user/userlist";
 
+    }
+
+    
+    /** 
+     * @param model
+     * @return String
+     */
+    @GetMapping("/newUser")
+    public String displayUserCreateForm(Model model) {
+        UserDao userDao = new UserDao();
+        model.addAttribute("userDao", userDao);
+        return "user/usercreateform";
     }
     @GetMapping("/petazo")
     public String showPetazo() {

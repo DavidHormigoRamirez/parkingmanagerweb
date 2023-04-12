@@ -24,6 +24,11 @@ public class UserRestController {
         this.userService = UserService;
     }
 
+    
+    /** 
+     * @param id
+     * @return EntityModel<User>
+     */
     @GetMapping("/api/users/{id}")
     public EntityModel<User> getUserById(@PathVariable Long id) {
             User user = userService.getById(id);
@@ -31,6 +36,10 @@ public class UserRestController {
             linkTo(methodOn(UserRestController.class).getUserById(id)).withSelfRel(),
             linkTo(methodOn(UserRestController.class).getAll()).withRel("users"));
     }
+    
+    /** 
+     * @return CollectionModel<EntityModel<User>>
+     */
     @GetMapping(value="/api/users")
     public CollectionModel<EntityModel<User>> getAll() {
         List<EntityModel<User>> users = userService.readAll().stream()
